@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
+    <!-- Favicon -->
+    <link rel="icon" type="icon" href="assets/images/favicon.png"/>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+    <!-- Swiper Slider -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+    <!-- AOS Animation CSS -->
+    <link href="assets/css/aos.css" rel="stylesheet"/>
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="assets/css/fancybox.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body class="overflow-x-hidden">
+<!-- screen loader -->
+<div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="200px"
+        height="200px"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="xMidYMid"
+    >
+        <circle cx="50" cy="50" r="0" fill="none" stroke="#47bdff" stroke-width="4">
+            <animate
+                attributeName="r"
+                repeatCount="indefinite"
+                dur="1s"
+                values="0;16"
+                keyTimes="0;1"
+                keySplines="0 0.2 0.8 1"
+                calcMode="spline"
+                begin="0s"
+            ></animate>
+            <animate
+                attributeName="opacity"
+                repeatCount="indefinite"
+                dur="1s"
+                values="1;0"
+                keyTimes="0;1"
+                keySplines="0.2 0 0.8 1"
+                calcMode="spline"
+                begin="0s"
+            ></animate>
+        </circle>
+        <circle cx="50" cy="50" r="0" fill="none" stroke="#b476e5" stroke-width="4">
+            <animate
+                attributeName="r"
+                repeatCount="indefinite"
+                dur="1s"
+                values="0;16"
+                keyTimes="0;1"
+                keySplines="0 0.2 0.8 1"
+                calcMode="spline"
+                begin="-0.5s"
+            ></animate>
+            <animate
+                attributeName="opacity"
+                repeatCount="indefinite"
+                dur="1s"
+                values="1;0"
+                keyTimes="0;1"
+                keySplines="0.2 0 0.8 1"
+                calcMode="spline"
+                begin="-0.5s"
+            ></animate>
+        </circle>
+    </svg>
+</div>
+
+<div
+    class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+>
+    <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
+        <div class="container">
+            <div class="relative flex items-center justify-between py-5 lg:py-0">
+                <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="h-10" /></a>
+                <div class="flex items-center">
+                    <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
+                    <div class="menus">
+                        <div class="border-b border-gray/10 ltr:text-right rtl:text-left lg:hidden">
+                            <button onclick="toggleMenu()" type="button" class="p-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="h-6 w-6 text-black dark:text-white"
+                                >
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="index.html" class="active">Главная</a>
+                            </li>
+                            <li>
+                                <a href="profile.html">Профиль художника</a>
+                            </li>
+                            <li>
+                                <a href="demonstrations.html">Выставки</a>
+                            </li>
+                            <li>
+                                <a href="galery.html">Галерея</a>
+                            </li>
+                            <li>
+                                <a href="cabinet.html">Личный кабинет</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden" onclick="toggleMenu()">
+                        <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                            <path
+                                d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
+                                fill="currentColor"
+                            />
+                            <path
+                                d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
+                                fill="currentColor"
+                            />
+                            <path
+                                d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="-mt-[82px] flex-grow overflow-hidden lg:-mt-[106px]">
+        <div class="overflow-hidden bg-black pt-[82px] sm:-mx-[250px] sm:rounded-b-[50%] lg:-mx-[150px] lg:pt-[106px]">
+            <div class="relative">
+                <img src="assets/images/banner-lefticon.png" alt="banner-lefticon"
+                     class="absolute left-0 top-20 sm:left-[250px] lg:left-[150px]"/>
+                <img
+                    src="assets/images/banner-rightIcon.png"
+                    alt="banner-rightIcon"
+                    class="absolute right-0 -top-4 sm:right-[250px] lg:right-[150px]"
+                />
+                <div class="container">
+                    <div
+                        class="relative bg-[url(../images/world-map.png)] bg-cover bg-top bg-no-repeat pt-14 pb-0 lg:pt-20 lg:pb-60 xl:pt-36">
+                        <div
+                            class="relative z-[1] text-center text-white lg:w-3/5 ltr:lg:text-left rtl:lg:text-right xl:w-1/2">
+                            <h2 class="text-4xl font-extrabold leading-normal sm:text-5xl lg:text-[70px] lg:leading-[90px]">
+                                Художественный <span class="italic text-primary">кружок</span>
+                            </h2>
+                            <p class="my-8 text-lg lg:w-[90%]">
+                                Направленность кружка - художественно-эстетическая.
+                                Кружок помогает приобщитсяк искусству,
+                                познанию культуры своей и других стран,
+                                приобретению практических
+                                навыков изобразительного творчества.
+                            </p>
+                        </div>
+                        <div
+                            class="bottom-0 mx-auto w-auto ltr:right-0 rtl:left-0 md:w-[540px] lg:absolute xl:w-[650px]"
+                            data-aos="fade-left"
+                            data-aos-duration="1000"
+                        >
+                            <img src="assets/images/home-banner-icon.svg" alt="home-banner-icon"
+                                 class="rtl:rotate-y-180"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section
+            class="bg-[url(../images/service-bg.png)] bg-cover bg-center bg-no-repeat py-14 dark:bg-none lg:py-[100px]">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>В чем заключается общая цель</h4>
+                    <h6>нашего кружка</h6>
+                </div>
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <div
+                            class="group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                            style="box-shadow: -20px 30px 70px rgba(219, 222, 225, 0.4)"
+                        >
+                            <a
+                                href="#"
+                                class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                            >Направленность</a
+                            >
+                            <p class="mb-10 text-lg font-semibold transition dark:group-hover:text-black">
+                                Кружок рассчитан на детей школьного возраста (от 11 до 17 лет), ориентирован на то,
+                                чтобы дать им базовое систематизированное образование по ИЗО,
+                                основанное на преимущественном изучении таких видов изобразительного искусства
+                                как живопись, рисунок, графика.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <div
+                            class="group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                            style="box-shadow: -20px 30px 70px rgba(219, 222, 225, 0.4)"
+                        >
+                            <a
+                                href="#"
+                                class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                            >Перспективы</a
+                            >
+                            <p class="mb-10 text-lg font-semibold transition dark:group-hover:text-black">
+                                Кружок создаёт для обучающихся перспективу их творческого роста, личностного развития.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-aos="fade-up" data-aos-duration="1000">
+                        <div
+                            class="group rounded-3xl border-2 border-white bg-white p-6 transition duration-500 hover:border-secondary hover:bg-secondary/20 dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.04] dark:to-transparent dark:!shadow-none dark:hover:bg-secondary"
+                            style="box-shadow: -20px 30px 70px rgba(219, 222, 225, 0.4)"
+                        >
+                            <a
+                                href="#"
+                                class="my-8 inline-block text-[22px] font-extrabold text-black dark:text-white dark:group-hover:text-black"
+                            >Цель</a>
+                            <p class="mb-10 text-lg font-semibold transition dark:group-hover:text-black">
+                                Цель кружка - обучение основам изобразительной грамоты и активное творческое развитие
+                                с учётом индивидуальности каждого ребёнка посредством занятий изобразительной
+                                деятельностью,
+                                приобщения к достижениям мировой художественной культуры.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-b from-white/60 to-transparent py-14 dark:from-white/[0.02] lg:py-[100px]">
+            <div class="container">
+                <div class="heading text-center">
+                    <h4>Режим занятий</h4>
+                    <h6>г.Пермь, Ласьвинская, 6, каб. 310</h6>
+                </div>
+                <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-2">
+                    <div
+                        class="group flex flex-col rounded-3xl border-2 border-primary bg-white p-6 px-4 transition hover:bg-primary hover:drop-shadow-[-10px_30px_70px_rgba(40,38,77,0.25)] dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.01] dark:to-transparent dark:drop-shadow-none dark:hover:border-gray-dark dark:hover:bg-gray-dark sm:px-6"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                    >
+                        <div class="mb-8">
+                            <h3 class="text-[22px] font-black text-black dark:text-white">Первый год обучения</h3>
+                        </div>
+                        <ul class="space-y-5 pb-7 text-sm font-bold group-hover:text-white">
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    Два раза в неделю
+                                </p>
+                            </li>
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    Урок - 2 часа
+                                </p>
+                            </li>
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    10-ти минутные перерывы
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="mt-auto border-t-2 border-[#BBC0D0]/50 pt-7">
+                            <div class="mb-3 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
+                                <a
+                                    href="javascript:"
+                                    class="btn text-xl text-white group-hover:bg-white group-hover:text-primary dark:text-black xl:w-44"
+                                >100 ₽<small class="text-xs lowercase">/мес.</small></a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="group flex flex-col rounded-3xl border-2 border-secondary bg-white p-6 px-4 transition hover:bg-secondary hover:drop-shadow-[-10px_30px_70px_rgba(40,38,77,0.25)] dark:border-white/10 dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.01] dark:to-transparent dark:drop-shadow-none dark:hover:border-gray-dark dark:hover:bg-gray-dark sm:px-6"
+                        data-aos="fade-up"
+                        data-aos-duration="1000"
+                    >
+                        <div class="relative mb-8">
+                            <h3 class="text-[22px] font-black text-black dark:text-white">
+                                Последующие года обучения
+                            </h3>
+                        </div>
+                        <ul class="space-y-5 pb-7 text-sm font-bold group-hover:text-white">
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    Два раза в неделю
+                                </p>
+                            </li>
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    Урок - 2 часа
+                                </p>
+                            </li>
+                            <li class="flex items-center">
+                                <div>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="8" cy="8" r="8" fill="#45B649"/>
+                                        <path
+                                            d="M5.11438 8.11438L7 10L10.7712 6.22876"
+                                            stroke="white"
+                                            stroke-width="1.6"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="ltr:pl-3 rtl:pr-3">
+                                    10-ти минутные перерывы
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="mt-auto border-t-2 border-[#BBC0D0]/50 pt-7">
+                            <div class="mb-3 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
+                                <a
+                                    href="javascript:"
+                                    class="btn bg-secondary text-xl text-white group-hover:bg-white group-hover:text-secondary dark:text-black xl:w-44"
+                                >200 ₽<small class="text-xs lowercase">/мес.</small></a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-14 dark:bg-white/[0.03] lg:py-20">
+            <div class="container">
+                <div class="flex flex-col items-center justify-center lg:flex-row lg:justify-between">
+                    <div class="heading text-center ltr:lg:text-left rtl:lg:text-right">
+                        <h6 class="!text-secondary">Новое</h6>
+                        <h4>Афиша выставок</h4>
+                    </div>
+                    <div class="mb-8 flex items-center justify-end gap-4 lg:mb-0">
+                        <button
+                            type="button"
+                            class="blog-slider-button-prev flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition hover:bg-secondary dark:bg-white/5 dark:hover:bg-secondary"
+                        >
+                            <svg
+                                width="7"
+                                height="12"
+                                viewBox="0 0 7 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="text-black rtl:rotate-180 dark:text-white"
+                            >
+                                <path
+                                    d="M5.95007 1.2002L1.48924 5.3424C1.06317 5.73803 1.06317 6.41236 1.48924 6.80799L5.95007 10.9502"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                ></path>
+                            </svg>
+                        </button>
+                        <button
+                            type="button"
+                            class="blog-slider-button-next text-p flex h-10 w-10 items-center justify-center rounded-full bg-black/5 transition hover:bg-secondary dark:bg-white/5 dark:hover:bg-secondary"
+                        >
+                            <svg
+                                width="7"
+                                height="12"
+                                viewBox="0 0 7 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="text-black rtl:rotate-180 dark:text-white"
+                            >
+                                <path
+                                    d="M1.05005 10.7998L5.51089 6.6576C5.93695 6.26197 5.93695 5.58764 5.51089 5.19201L1.05005 1.0498"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper blog-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="rounded-3xl bg-white dark:bg-gray-dark">
+                                <img src="assets/images/art-perm/art1.JPG" alt="blog-3" class="h-52 w-full rounded-t-3xl object-cover" />
+                                <div class="p-5 text-sm font-bold">
+                                    <span class="rounded bg-primary/10 py-1 px-2 text-sm font-extrabold text-primary">
+                                        Местная
+                                    </span>
+                                    <a
+                                        href="demonstrations.html"
+                                        class="my-[10px] block text-lg font-extrabold leading-[23px] text-black transition line-clamp-2 hover:text-secondary dark:text-white dark:hover:text-secondary"
+                                    >
+                                        Арт-Пермь
+                                    </a>
+                                    <p>
+                                        22-я Международная выставка-продажа живописи, графики, скульптуры, фотографии и изделий декоративно-прикладного искусства
+                                    </p>
+                                    <div class="mt-6 flex items-center justify-between text-secondary">
+                                        <span>
+                                            2–11 февраля 2019
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-3xl bg-white dark:bg-gray-dark">
+                                <img src="assets/images/art-perm/art3.JPG" alt="blog-3" class="h-52 w-full rounded-t-3xl object-cover" />
+                                <div class="p-5 text-sm font-bold">
+                                    <span class="rounded bg-primary/10 py-1 px-2 text-sm font-extrabold text-primary">
+                                        Космос
+                                    </span>
+                                    <a
+                                        href="demonstrations.html"
+                                        class="my-[10px] block text-lg font-extrabold leading-[23px] text-black transition line-clamp-2 hover:text-secondary dark:text-white dark:hover:text-secondary"
+                                    >
+                                        Путь к звездам
+                                    </a>
+                                    <p>
+                                        Выставка рассказывает, как развивались знания человека о космосе от античности до современности, знакомит с биографиями отечественных космонавтов — Юрия Гагарина, Германа Титова, Алексея Леонова, Валентины Терешковой.
+                                    </p>
+                                    <div class="mt-6 flex items-center justify-between text-secondary">
+                                        <span>до 30 июня</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rounded-3xl bg-white dark:bg-gray-dark">
+                                <img src="assets/images/art-perm/art4.JPG" alt="blog-3" class="h-52 w-full rounded-t-3xl object-cover" />
+                                <div class="p-5 text-sm font-bold">
+                                    <span class="rounded bg-primary/10 py-1 px-2 text-sm font-extrabold text-primary">
+                                        История
+                                    </span>
+                                    <a
+                                        href="demonstrations.html"
+                                        class="my-[10px] block text-lg font-extrabold leading-[23px] text-black transition line-clamp-2 hover:text-secondary dark:text-white dark:hover:text-secondary"
+                                    >
+                                        Романовы. 1613–1917
+                                    </a>
+                                    <p>
+                                        За 300 лет правления династии наша страна пережила великие события: освоение Сибири и Дальнего Востока, воссоединение Руси и Украины, основание новой столицы — Петербурга, победу над Наполеоном, вхождение в состав России южных регионов, отмену крепостного права, небывалые культурный, научно-технический и индустриальный подъемы и многое другое.
+                                    </p>
+                                    <div class="mt-6 flex items-center justify-between text-secondary">
+                                        <span>до 23 июля</span>
+                                        <a href="demonstrations.html" class="transition hover:text-primary">
+                                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M25.4091 13.0009C25.4091 19.8539 19.8531 25.41 13 25.41C6.14699 25.41 0.590937 19.8539 0.590937 13.0009C0.590937 6.14785 6.14699 0.591797 13 0.591797C19.8531 0.591797 25.4091 6.14785 25.4091 13.0009ZM12.7226 7.55043C12.6336 7.63872 12.5628 7.74368 12.5144 7.85931C12.466 7.97495 12.4408 8.09899 12.4403 8.22436C12.4398 8.34973 12.464 8.47398 12.5115 8.58999C12.559 8.70601 12.6289 8.81153 12.7172 8.90052L15.8386 12.0463H7.86935C7.61618 12.0463 7.37339 12.1469 7.19438 12.3259C7.01537 12.5049 6.9148 12.7477 6.9148 13.0009C6.9148 13.254 7.01537 13.4968 7.19438 13.6759C7.37339 13.8549 7.61618 13.9554 7.86935 13.9554H15.8386L12.7172 17.1013C12.6289 17.1903 12.5591 17.2959 12.5116 17.412C12.4641 17.5281 12.4399 17.6524 12.4405 17.7778C12.441 17.9033 12.4663 18.0273 12.5148 18.143C12.5633 18.2587 12.6341 18.3636 12.7232 18.4519C12.8123 18.5402 12.9179 18.6101 13.034 18.6576C13.1501 18.7051 13.2744 18.7292 13.3998 18.7287C13.5252 18.7281 13.6493 18.7029 13.765 18.6544C13.8806 18.6059 13.9856 18.5351 14.0739 18.446L18.8102 13.6732C18.9876 13.4944 19.0872 13.2528 19.0872 13.0009C19.0872 12.749 18.9876 12.5073 18.8102 12.3285L14.0739 7.5558C13.9856 7.46661 13.8806 7.39571 13.7648 7.34716C13.6491 7.29861 13.5249 7.27336 13.3994 7.27286C13.2739 7.27236 13.1495 7.29662 13.0333 7.34425C12.9172 7.39188 12.8116 7.46194 12.7226 7.55043Z"
+                                                    fill="currentColor"
+                                                />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gradient-to-t from-white/60 pb-12 dark:bg-gradient-to-t dark:from-white/10 lg:pb-24">
+            <div class="container">
+                <div class="heading mb-[30px] text-center ltr:md:text-left rtl:md:text-right">
+                    <h6>Если нужно немного вдохновения</h6>
+                    <h4>Фото галерея</h4>
+                </div>
+                <div class="projects mt-8 grid grid-cols-1 gap-[30px] sm:grid-cols-2 md:grid-cols-3" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="delux-room">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image1.jpg" class="z-[1] h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image1.jpg"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="delux-room">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image2.jpg" class="h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image2.jpg"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="cozy-room">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image3.jpg" class="h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image3.jpg"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="family-suit">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image4.JPG" class="h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image4.JPG"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="family-suit">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image5.jpg" class="h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image5.jpg"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project group relative overflow-hidden rounded-xl" data-filter="modern-room">
+                        <div class="absolute inset-0 duration-200 group-hover:bg-black/50"></div>
+                        <img src="assets/images/gallery/image1.jpg" class="h-full w-full object-cover" alt="" />
+                        <div
+                            class="absolute inset-0 m-auto flex scale-0 items-center justify-center text-white transition duration-700 group-hover:scale-100"
+                        >
+                            <a
+                                href="assets/images/gallery/image1.jpg"
+                                data-fancybox="gallery"
+                                class="flex h-[60px] w-[60px] items-center justify-center"
+                            >
+                                        <span
+                                            class="flex h-12 w-12 items-center justify-center rounded-full bg-secondary opacity-0 duration-200 hover:bg-primary group-hover:opacity-100"
+                                        >
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M9 4.45962C9.91153 4.16968 10.9104 4 12 4C16.1819 4 19.028 6.49956 20.7251 8.70433C21.575 9.80853 22 10.3606 22 12C22 13.6394 21.575 14.1915 20.7251 15.2957C19.028 17.5004 16.1819 20 12 20C7.81811 20 4.97196 17.5004 3.27489 15.2957C2.42496 14.1915 2 13.6394 2 12C2 10.3606 2.42496 9.80853 3.27489 8.70433C3.75612 8.07914 4.32973 7.43025 5 6.82137"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                />
+                                                <path
+                                                    d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 12 9C13.6569 9 15 10.3431 15 12Z"
+                                                    stroke="white"
+                                                    stroke-width="1.5"
+                                                />
+                                            </svg>
+                                        </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer
+        class="mt-auto bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent">
+        <div class="container">
+            <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
+                <div class="relative">
+                    <img src="assets/images/logo.png" alt="plurk" class="h-7"/>
+                </div>
+                <div>
+                    <ul class="flex flex-col gap-3 font-bold">
+                        <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Навигация</li>
+                        <li><a href="index.html" class="inline-block transition hover:scale-110 hover:text-secondary">Главная</a>
+                        </li>
+                        <li><a href="profile.html"
+                               class="inline-block transition hover:scale-110 hover:text-secondary">Профиль художника</a></li>
+                        <li><a href="demonstrations.html"
+                               class="inline-block transition hover:scale-110 hover:text-secondary">Выставки</a></li>
+                        <li><a href="galery.html" class="inline-block transition hover:scale-110 hover:text-secondary">Галерея</a>
+                        </li>
+                        <li><a href="cabinet.html"
+                               class="inline-block transition hover:scale-110 hover:text-secondary">Личный кабинет</a></li>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="flex flex-col gap-3 font-bold">
+                        <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Контакты</li>
+                        <li>г.Пермь, Ласьвинская, 6, каб. 310</li>
+                        <li>
+                            <a href="tel:+8 (800) 555-35-35"
+                               class="inline-block transition hover:scale-110 hover:text-secondary">8 (800) 555-35-35</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none">
+            <div class="container">
+                <div
+                    class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
+                    <div>
+                        Все права принадлежат © <span class="curr-year">2023</span>
+                        <a href="javascript:" class="text-primary transition hover:text-secondary">
+                            ООО "Обнал"
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Return to Top -->
+<button type="button" id="scrollToTopBtn" class="fixed bottom-5 z-10 hidden animate-bounce ltr:right-5 rtl:left-5"
+        onclick="scrollToTop()">
+    <div
+        class="group flex h-14 w-14 items-center justify-center rounded-full border border-black/20 bg-black text-white transition duration-500 hover:bg-secondary dark:bg-primary dark:hover:bg-secondary"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6 transition group-hover:text-black"
+        >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+        </svg>
+    </div>
+</button>
+
+<!-- Swiper Slider JS -->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!-- Counter Js -->
+<script src="assets/js/vanilla-counter.js"></script>
+<!-- AOS Animation JS -->
+<script src="assets/js/aos.js"></script>
+<!-- FancyBox -->
+<script src="assets/js/fancybox.umd.js"></script>
+<!-- Custom Js -->
+<script src="assets/js/custom.js"></script>
+
+<script>
+    // Testimonial Slider
+    var swiper1 = new Swiper('.mySwiper', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        speed: 1000,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.testimonial-swiper-button-next',
+            prevEl: '.testimonial-swiper-button-prev',
+        },
+    });
+
+    // Blog Slider
+    var swiper2 = new Swiper('.blog-slider', {
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.blog-slider-button-next',
+            prevEl: '.blog-slider-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+</script>
+</body>
+</html>

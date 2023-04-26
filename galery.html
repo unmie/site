@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Plurk – Tailwind CSS Multipurpose Landing Templates</title>
+        <!-- Favicon -->
+        <link rel="icon" type="icon" href="assets/images/favicon.png" />
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+        <!-- Swiper Slider -->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+        <!-- AOS Animation CSS -->
+        <link href="assets/css/aos.css" rel="stylesheet" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="assets/css/style.css" />
+    </head>
+    <body class="overflow-x-hidden">
+        <!-- screen loader -->
+        <div class="screen_loader fixed inset-0 z-[60] grid place-content-center bg-[#fafafa] dark:bg-[#060818]">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="200px"
+                height="200px"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="xMidYMid"
+            >
+                <circle cx="50" cy="50" r="0" fill="none" stroke="#47bdff" stroke-width="4">
+                    <animate
+                        attributeName="r"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="0;16"
+                        keyTimes="0;1"
+                        keySplines="0 0.2 0.8 1"
+                        calcMode="spline"
+                        begin="0s"
+                    ></animate>
+                    <animate
+                        attributeName="opacity"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="1;0"
+                        keyTimes="0;1"
+                        keySplines="0.2 0 0.8 1"
+                        calcMode="spline"
+                        begin="0s"
+                    ></animate>
+                </circle>
+                <circle cx="50" cy="50" r="0" fill="none" stroke="#b476e5" stroke-width="4">
+                    <animate
+                        attributeName="r"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="0;16"
+                        keyTimes="0;1"
+                        keySplines="0 0.2 0.8 1"
+                        calcMode="spline"
+                        begin="-0.5s"
+                    ></animate>
+                    <animate
+                        attributeName="opacity"
+                        repeatCount="indefinite"
+                        dur="1s"
+                        values="1;0"
+                        keyTimes="0;1"
+                        keySplines="0.2 0 0.8 1"
+                        calcMode="spline"
+                        begin="-0.5s"
+                    ></animate>
+                </circle>
+            </svg>
+        </div>
+        <div
+            class="flex min-h-screen flex-col bg-white bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] font-mulish text-base font-normal text-gray antialiased dark:bg-[#101926] dark:from-transparent dark:to-transparent"
+        >
+            <header id="top-header" class="sticky top-0 z-50 bg-black/10 transition duration-300">
+                <div class="container">
+                    <div class="relative flex items-center justify-between py-5 lg:py-0">
+                        <a href="index.html"><img src="assets/images/logo.png" alt="logo" class="h-10" /></a>
+                        <div class="flex items-center">
+                            <div onclick="toggleMenu()" class="overlay fixed inset-0 z-[51] hidden bg-black/60 lg:hidden"></div>
+                            <div class="menus">
+                                <div class="border-b border-gray/10 ltr:text-right rtl:text-left lg:hidden">
+                                    <button onclick="toggleMenu()" type="button" class="p-4">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            class="h-6 w-6 text-black dark:text-white"
+                                        >
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <a href="index.html">Главная</a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.html">Профиль художника</a>
+                                    </li>
+                                    <li>
+                                        <a href="demonstrations.html">Выставки</a>
+                                    </li>
+                                    <li>
+                                        <a href="galery.html" class="active">Галерея</a>
+                                    </li>
+                                    <li>
+                                        <a href="cabinet.html">Личный кабинет</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button type="button" class="flex h-10 w-10 items-center justify-center rounded-full bg-primary lg:hidden" onclick="toggleMenu()">
+                                <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-white">
+                                    <path
+                                        d="M2 15H11C11.552 15 12 15.447 12 16C12 16.553 11.552 17 11 17H2C1.448 17 1 16.553 1 16C1 15.447 1.448 15 2 15Z"
+                                        fill="currentColor"
+                                    />
+                                    <path
+                                        d="M2 8H20C20.552 8 21 8.447 21 9C21 9.553 20.552 10 20 10H2C1.448 10 1 9.553 1 9C1 8.447 1.448 8 2 8Z"
+                                        fill="currentColor"
+                                    />
+                                    <path
+                                        d="M21 2C21 1.447 20.552 1 20 1H7C6.448 1 6 1.447 6 2C6 2.553 6.448 3 7 3H20C20.552 3 21 2.553 21 2Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="-mt-[82px] flex-grow overflow-x-hidden lg:-mt-[106px]">
+                <div class="bg-[url(../images/inner-page-hero-bg.png)] bg-cover bg-bottom bg-no-repeat pt-[82px] lg:pt-[106px]">
+                    <div class="relative">
+                        <div class="container">
+                            <div class="items-center py-10 md:flex md:h-[400px] md:py-0">
+                                <div class="heading relative mb-0 md:w-[725px]">
+                                    <h4 class="!text-white">
+                                        Фотогалерея
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="py-14 md:py-[100px]">
+                    <div class="container">
+                        <div class="grid gap-[30px] sm:grid-cols-2">
+                            <img src="assets/images/gallery/image1.jpg" alt="portfolio" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
+                            <img src="assets/images/gallery/image2.jpg" alt="portfolio" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
+                        </div>
+                        <div class="py-[30px] sm:py-[50px]">
+                            <img src="assets/images/gallery/image4.JPG" alt="portfolio" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
+                        </div>
+                        <div class="py-[30px] sm:py-[50px]">
+                            <img src="assets/images/gallery/image5.jpg" alt="portfolio" class="rounded-[32px]" data-aos="fade-up" data-aos-duration="1000" />
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer
+                class="mt-auto bg-white dark:bg-transparent dark:bg-gradient-to-b dark:from-white/[0.03] dark:to-transparent">
+                <div class="container">
+                    <div class="grid gap-y-10 gap-x-4 py-14 sm:grid-cols-3 lg:grid-cols-5 lg:py-[100px]">
+                        <div class="relative">
+                            <img src="assets/images/logo.png" alt="plurk" class="h-7"/>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Навигация</li>
+                                <li><a href="index.html" class="inline-block transition hover:scale-110 hover:text-secondary">Главная</a>
+                                </li>
+                                <li><a href="profile.html"
+                                       class="inline-block transition hover:scale-110 hover:text-secondary">Профиль художника</a></li>
+                                <li><a href="demonstrations.html"
+                                       class="inline-block transition hover:scale-110 hover:text-secondary">Выставки</a></li>
+                                <li><a href="galery.html" class="inline-block transition hover:scale-110 hover:text-secondary">Галерея</a>
+                                </li>
+                                <li><a href="cabinet.html"
+                                       class="inline-block transition hover:scale-110 hover:text-secondary">Личный кабинет</a></li>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="flex flex-col gap-3 font-bold">
+                                <li class="mb-3 text-lg font-extrabold text-black dark:text-white">Контакты</li>
+                                <li>г.Пермь, Ласьвинская, 6, каб. 310</li>
+                                <li>
+                                    <a href="tel:+8 (800) 555-35-35"
+                                       class="inline-block transition hover:scale-110 hover:text-secondary">8 (800) 555-35-35</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#FCF1F4] to-[#EDFBF9] py-5 dark:border-t-2 dark:border-white/5 dark:bg-none">
+                    <div class="container">
+                        <div
+                            class="flex flex-col items-center justify-between text-center font-bold dark:text-white md:flex-row">
+                            <div>
+                                Все права принадлежат © <span class="curr-year">2023</span>
+                                <a href="javascript:" class="text-primary transition hover:text-secondary">
+                                    ООО "Обнал"
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Return to Top -->
+        <button type="button" id="scrollToTopBtn" class="fixed bottom-5 z-10 hidden animate-bounce ltr:right-5 rtl:left-5" onclick="scrollToTop()">
+            <div
+                class="group flex h-14 w-14 items-center justify-center rounded-full border border-black/20 bg-black text-white transition duration-500 hover:bg-secondary dark:bg-primary dark:hover:bg-secondary"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="h-6 w-6 transition group-hover:text-black"
+                >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                </svg>
+            </div>
+        </button>
+
+        <!-- Swiper Slider JS -->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!-- AOS Animation JS -->
+        <script src="assets/js/aos.js"></script>
+        <!-- Custom Js -->
+        <script src="assets/js/custom.js"></script>
+
+        <script>
+            // Offices Location Slider
+            var swiper = new Swiper('.ofc-slider', {
+                slidesPerView: 'auto',
+                loop: true,
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.ofc-slider-button-next',
+                    prevEl: '.ofc-slider-button-prev',
+                },
+            });
+
+            // Project Slider
+            var swiper = new Swiper('.project-slider', {
+                loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.project-slider-button-next',
+                    prevEl: '.project-slider-button-prev',
+                },
+                breakpoints: {
+                    600: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    },
+                    1000: {
+                        slidesPerView: 4,
+                    },
+                    1200: {
+                        slidesPerView: 5,
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
